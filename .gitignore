@@ -1,0 +1,6 @@
+.env
+.env.*
+*.pprof
+*.log
+*.bin
+*.exe

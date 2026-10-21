@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package audit;
+
+option go_package = "audit-contract/proto;auditpb";
+
+// خدمة التدقيق
+service AuditService {
+  rpc LogEvent (LogEventRequest) returns (LogEventResponse);
+}
+
+message LogEventRequest {
+  string action = 1;
+  string performed_by = 2;
+  string details = 3;
+}
+
+message LogEventResponse {
+  bool success = 1;
+  string message = 2;
+}
